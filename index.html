@@ -1,35 +1,189 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
-<meta charset="UTF-8">
-<title>Pack Colecionável 10GB</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obrigado pela sua Doação</title>
+  <style>
+    :root {
+      --bg: #0f0f14;
+      --card: #171722;
+      --accent: #e91e63;
+      --text: #f4f4f6;
+      --muted: #b8b8c2;
+      --btn: #222235;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      background: radial-gradient(1200px 600px at 50% -10%, #1f1f35, var(--bg));
+      color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .card {
+      width: min(920px, 92vw); background: linear-gradient(180deg, #1a1a2b, var(--card));
+      border-radius: 18px; padding: 28px; box-shadow: 0 20px 60px rgba(0,0,0,.45);
+    }
+    header { display: flex; gap: 12px; align-items: center; justify-content: space-between; }
+    .badge { color: var(--accent); letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
+    .lang { display: flex; gap: 8px; }
+    .lang button {
+      background: var(--btn); color: var(--text); border: 1px solid #2a2a44;
+      padding: 8px 12px; border-radius: 999px; cursor: pointer; opacity: .9;
+    }
+    .lang button.active { background: var(--accent); border-color: var(--accent); }
+    h1 { margin: 10px 0 6px; font-size: clamp(26px, 4vw, 36px); }
+    p { color: var(--muted); line-height: 1.6; }
+    .grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 22px; margin-top: 18px; }
+    @media (max-width: 760px){ .grid{ grid-template-columns: 1fr; } }
+    .panel {
+      background: #121221; border: 1px solid #24244a; border-radius: 14px; padding: 18px;
+    }
+    .panel h3 { margin-top: 0; }
+    .cta { display: grid; gap: 12px; }
+    .row { display: grid; gap: 8px; }
+    label { font-size: 13px; color: var(--muted); }
+    input {
+      background: #0e0e1a; color: var(--text); border: 1px dashed #3a3a66;
+      padding: 14px; border-radius: 12px; font-size: 18px; letter-spacing: .06em;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: linear-gradient(135deg, #ff4f8b, var(--accent)); color: #fff;
+      padding: 14px 16px; border-radius: 14px; text-decoration: none; font-weight: 600;
+    }
+    .btn.secondary { background: #1c1c33; border: 1px solid #2c2c55; }
+    .links { display: grid; gap: 10px; }
+    footer { margin-top: 14px; text-align: center; color: var(--muted); font-size: 13px; }
+    .sensual {
+      background: linear-gradient(180deg, rgba(233,30,99,.18), transparent);
+      border-radius: 12px; padding: 14px; color: #ffd6e4;
+    }
+  </style>
 </head>
+<body>
+  <main class="card">
+    <header>
+      <div>
+        <div class="badge">exclusive</div>
+        <h1 data-i18n="title">Obrigado por sua doação!</h1>
+      </div>
+      <div class="lang">
+        <button class="active" data-lang="pt">PT</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="es">ES</button>
+      </div>
+    </header>
 
-<body style="font-family: Arial; max-width: 600px; margin: auto; padding: 20px;">
+    <div class="grid">
+      <section class="panel">
+        <p data-i18n="lead">
+          Agradecemos seu apoio. Para liberar sua colecionável, envie o comprovante por um de nossos canais
+          informando o número da modelo escolhida.
+        </p>
+        <div class="sensual" data-i18n="sensual">
+          Conteúdo elegante, provocante e artístico — feito para quem aprecia detalhes.
+        </div>
+      </section>
 
-<h1>Pack Colecionável Digital – 10GB</h1>
+      <section class="panel">
+        <h3 data-i18n="send">Envie o comprovante</h3>
+        <div class="cta">
+          <div class="row">
+            <label for="model" data-i18n="model">Número da modelo (XXX)</label>
+            <input id="model" placeholder="XXX" maxlength="6" />
+          </div>
+          <a id="mailLink" class="btn" href="#" data-i18n="emailBtn">Enviar por e-mail</a>
+          <a class="btn secondary" href="https://discord.gg/hhyC9ysDgU" target="_blank" rel="noopener" data-i18n="discordBtn">Entrar no Discord</a>
+        </div>
+        <div class="links">
+          <p>
+            <strong>Email:</strong>
+            <a href="#" id="mailText">khromatik.esc@gmail.com</a>
+          </p>
+          <p>
+            <strong>Instagram:</strong>
+            <a href="https://instagram.com/sofiaskygg" target="_blank" rel="noopener">@sofiaskygg</a>
+          </p>
+        </div>
+      </section>
+    </div>
 
-<p>
-Conteúdo digital exclusivo disponibilizado como item colecionável.
-Acesso imediato após confirmação do pagamento.
-</p>
+    <footer data-i18n="footer">
+      Siga no Instagram para ficar por dentro e escolher suas próximas colecionáveis.
+    </footer>
+  </main>
 
-<ul>
-<li>📦 +10GB de arquivos</li>
-<li>🔐 Acesso privado</li>
-<li>⚡ Entrega automática</li>
-<li>💎 Pagamento em cripto</li>
-</ul>
+  <script>
+    const i18n = {
+      pt: {
+        title: 'Obrigado por sua doação!',
+        lead: 'Agradecemos seu apoio. Para liberar sua colecionável, envie o comprovante por um de nossos canais informando o número da modelo escolhida.',
+        sensual: 'Conteúdo elegante, provocante e artístico — feito para quem aprecia detalhes.',
+        send: 'Envie o comprovante',
+        model: 'Número da modelo (XXX)',
+        emailBtn: 'Enviar por e-mail',
+        discordBtn: 'Entrar no Discord',
+        footer: 'Siga no Instagram para ficar por dentro e escolher suas próximas colecionáveis.'
+      },
+      en: {
+        title: 'Thank you for your donation!',
+        lead: 'We appreciate your support. To unlock your collectible, send the receipt through one of our channels and include the selected model number.',
+        sensual: 'Elegant, provocative, and artistic content — crafted for those who savor details.',
+        send: 'Send the receipt',
+        model: 'Model number (XXX)',
+        emailBtn: 'Send by email',
+        discordBtn: 'Join Discord',
+        footer: 'Follow us on Instagram to stay updated and choose your next collectibles.'
+      },
+      es: {
+        title: '¡Gracias por tu donación!',
+        lead: 'Agradecemos tu apoyo. Para desbloquear tu coleccionable, envía el comprobante por uno de nuestros canales e indica el número del modelo elegido.',
+        sensual: 'Contenido elegante, provocador y artístico — creado para quienes aprecian los detalles.',
+        send: 'Enviar comprobante',
+        model: 'Número del modelo (XXX)',
+        emailBtn: 'Enviar por correo',
+        discordBtn: 'Entrar al Discord',
+        footer: 'Síguenos en Instagram para enterarte y elegir tus próximos coleccionables.'
+      }
+    };
 
-<h2>Valor: 5 USD</h2>
+    const buttons = document.querySelectorAll('.lang button');
+    const nodes = document.querySelectorAll('[data-i18n]');
+    let currentLang = 'pt';
 
-<a href="https://nowpayments.io/payment/?iid=6000471344&source=button" target="_blank" rel="noreferrer noopener">
-    <img src="https://nowpayments.io/images/embeds/payment-button-black.svg" alt="Crypto payment button by NOWPayments">
-</a>
+    function setLang(lang){
+      currentLang = lang;
+      buttons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+      nodes.forEach(n => n.textContent = i18n[lang][n.dataset.i18n]);
+      document.documentElement.lang = lang;
+      updateMail();
+    }
 
-<p style="font-size:12px; margin-top:20px;">
-Produto digital colecionável. Uso pessoal.
-</p>
+    buttons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
 
+    const modelInput = document.getElementById('model');
+    const mailLink = document.getElementById('mailLink');
+    const mailText = document.getElementById('mailText');
+
+    function updateMail(){
+      const model = modelInput.value || 'XXX';
+      const subject = {
+        pt: 'Envio de comprovante - Modelo ' + model,
+        en: 'Receipt submission - Model ' + model,
+        es: 'Envío de comprobante - Modelo ' + model
+      }[currentLang];
+      const body = {
+        pt: `Olá,\n\nEstou enviando o comprovante em anexo, referente à compra do produto com a modelo de número ${model}.\n\nObrigado!`,
+        en: `Hello,\n\nI am sending the receipt attached regarding the purchase of the product with model number ${model}.\n\nThank you!`,
+        es: `Hola,\n\nEnvío el comprobante adjunto correspondiente a la compra del producto con el modelo número ${model}.\n\n¡Gracias!`
+      }[currentLang];
+      const href = `mailto:khromatik.esc@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      mailLink.href = href;
+      mailText.href = href;
+    }
+
+    modelInput.addEventListener('input', updateMail);
+    setLang('pt');
+  </script>
 </body>
 </html>
